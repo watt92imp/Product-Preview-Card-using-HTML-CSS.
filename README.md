@@ -47,38 +47,52 @@ Use this section to recap over some of your major learnings while working throug
 To see how you can add code snippets, see below:
 
 ```html
-<div class="card">
-  <div class="product">
-    <img
-      class="image-desktop"
-      src="./images/image-product-desktop.jpg"
-      alt="product-perfume"
-    />
-    <img
-      class="image-mobile"
-      src="./images/image-product-mobile.jpg"
-      alt="product-perfume"
-    />
-  </div>
-  <div class="content">
-    <span class="product-title">Perfume</span>
-    <h1 class="title">Gabrielle Essence Eau De Parfum</h1>
-    <p class="info">
-      A floral, solar and voluptuous interpretation composed by Olivier Polge,
-      Perfumer-Creator for the House of CHANEL.
-    </p>
-    <div class="price">
-      <h2>$149.99</h2>
-      <del>$169.99</del>
-    </div>
-    <button class="btn">
-      <img src="./images/icon-cart.svg" alt="" class="icon-cart" />Add to Cart
-    </button>
-  </div>
-</div>
+<main>
+      <div class="card">
+        <picture class="preview">
+          <source
+            media="(min-width:641px)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <source
+            media="(max-width:641px)"
+            srcset="./images/image-product-mobile.jpg"
+          />
+          <img
+            src="./images/image-product-desktop.jpg"
+            alt="A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL."
+          />
+        </picture>
+        <div class="content">
+          <span class="product-title">Perfume</span>
+          <h1 class="title">Gabrielle Essence Eau De Parfum</h1>
+          <p class="info">
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <div class="price">
+            <h2>$149.99</h2>
+            <del>$169.99</del>
+          </div>
+          <button class="btn">
+            <img src="./images/icon-cart.svg" alt="" class="icon-cart" />Add to
+            Cart
+          </button>
+        </div>
+      </div>
+    </main>
 ```
 
 ```css
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+:root {
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+}
 * {
   margin: 0;
   padding: 0;
@@ -97,13 +111,13 @@ body {
   border-radius: 0.5rem;
   width: 600px;
 }
-.product {
+.preview {
   width: 300px;
   height: auto;
   position: relative;
   border-radius: 0.5rem 0 0 0.5rem;
 }
-.product img {
+.preview img {
   width: auto;
   width: 300px;
   min-height: 100%;
@@ -161,28 +175,16 @@ body {
   font-weight: 700;
   border-radius: 0.5rem;
   cursor: pointer;
-}
-.btn img {
-  margin-right: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
 }
 .btn:hover {
   background-color: var(--Very-dark-blue);
 }
-@media screen and (min-width: 900px) {
-  .image-mobile {
-    display: none !important;
-  }
-  .image-desktop {
-    display: block !important;
-  }
-}
-@media screen and (max-width: 600px) {
-  .image-desktop {
-    display: none !important;
-  }
-  .image-mobile {
-    display: block !important;
-  }
+
+@media screen and (max-width: 641px) {
   .card {
     flex-direction: column;
     max-width: 375px;
@@ -195,10 +197,10 @@ body {
     height: auto;
     gap: 1rem;
   }
-  .product {
+  .preview {
     width: 100%;
   }
-  .product img {
+  .preview img {
     width: 100%;
     border-radius: 0.5rem 0.5rem 0 0;
   }
@@ -207,4 +209,5 @@ body {
     width: 100%;
   }
 }
+
 ```
