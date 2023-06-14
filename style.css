@@ -72,7 +72,7 @@ body {
   font-family: "Fraunces", serif;
   color: var(--Dark-cyan);
 }
-.price span {
+.price del {
   text-decoration: line-through;
   color: var(--Dark-grayish-blue);
   font-size: 14px;
