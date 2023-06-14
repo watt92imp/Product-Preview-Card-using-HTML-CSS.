@@ -17,7 +17,7 @@
   <body>
     <main>
       <div class="card">
-        <div class="product">
+        <!-- <div class="product">
           <img
             class="image-desktop"
             src="./images/image-product-desktop.jpg"
@@ -28,7 +28,22 @@
             src="./images/image-product-mobile.jpg"
             alt="product-perfume"
           />
-        </div>
+        </div> -->
+        <picture class="preview">
+          <source
+            media="(min-width:641px)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <source
+            media="(max-width:641px)"
+            srcset="./images/image-product-mobile.jpg"
+          />
+          <img
+            src="./images/image-product-desktop.jpg"
+            alt="A floral, solar and voluptuous interpretation composed by Olivier
+          Polge, Perfumer-Creator for the House of CHANEL."
+          />
+        </picture>
         <div class="content">
           <span class="product-title">Perfume</span>
           <h1 class="title">Gabrielle Essence Eau De Parfum</h1>
